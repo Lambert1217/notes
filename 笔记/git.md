@@ -2,6 +2,10 @@
 
 
 
+---
+
+
+
 ## 报错处理
 
 ### 超时处理
@@ -26,4 +30,135 @@
  	git config --global http.proxy http://127.0.0.1:33210
  	git config --global https.proxy https://127.0.0.1:33210
 ~~~
+
+
+
+---
+
+
+
+## 初始化处理
+
+### 查看当前版本
+
+```
+	git --version
+```
+
+
+
+### 配置用户名和邮箱
+
+```
+	git config --global user.name "Your name"
+	git config --global user.email Your_email
+```
+
+
+
+### 自动保存账户密码
+
+```
+	git config --global credential.helper store
+```
+
+
+
+### 查看所有配置项
+
+```
+	git config --global --list
+```
+
+
+
+---
+
+
+
+## 新建仓库
+
+### 方式一 （init）
+
+1. 把当前目录变成Git仓库
+
+```
+	git init
+```
+
+2. 在当前目录下新建文件夹
+
+```
+	git init my_repo
+```
+
+![image-20230827141503850](.\assets\image-20230827141503850.png)
+
+
+
+![image-20230827141520927](.\assets\image-20230827141520927.png)
+
+### 方式二 （clone）
+
+远程仓库已经创建好
+
+```
+	git clone 远程仓库地址
+```
+
+
+
+- **下图中的 `.git` 隐藏文件是用来存放Git仓库的所有数据的。（删除后就不是Git仓库了）**
+
+​	![image-20230827140916229](.\assets\image-20230827140916229.png)
+
+
+
+---
+
+
+
+## 添加和提交文件
+
+### 查看仓库状态
+
+```
+	git status
+```
+
+可以查看仓库中文件的变化，有以下四种：
+
+![image-20230827142741313](.\assets\image-20230827142741313.png)
+
+**eg:**
+
+![image-20230827143133654](.\assets\image-20230827143133654.png)
+
+其中第一部分是修改但是没有暂存  ， 第二部分是未被跟踪（新建文件）。
+
+
+
+### 提交到暂存区
+
+```
+git add file
+```
+
+- 可以使用 `git add .`	全部提交
+
+![image-20230827143845993](./assets/image-20230827143845993.png)
+
+
+
+### 提交到本地仓库
+
+```
+git commit -m "提交信息"
+```
+
+- 只会提交在暂存区中文件
+
+- 可以使用 `git log` 查看提交记录，使用 `git log --oneline` 查看简洁的提交记录
+
+
 
